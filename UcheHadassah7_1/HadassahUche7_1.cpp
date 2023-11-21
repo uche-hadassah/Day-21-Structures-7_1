@@ -8,3 +8,12 @@ c) Modify the structure definition so that you include a Date structure inside t
 structure, in order to store the date of purchase (similar to the Date structure shown as 
 an example on the slides). Declare a variable using this modified structure, accept the 
 data from the user and display them.*/
+#include<iostream>
+#include<cstring>
+using namespace std;
+struct Stock
+{
+	char name[30];
+	double price;
+	char dateOfPurchase[11];
+};
