@@ -41,7 +41,15 @@ int main()
 	cin.ignore();
 	cout << "Enter the date of purchase" << endl;
 	cout << "day:";
-	cin >> stockInfo.dateOfPurchase.day;
+	do
+	{
+		cin >> stockInfo.dateOfPurchase.day;
+		while (stockInfo.dateOfPurchase.day < 1 || stockInfo.dateOfPurchase.day>31)
+		{
+			cout <<"Invalid day. We can't have "<< stockInfo.dateOfPurchase.day <<" day(s) in a month."<<endl<< "Please enter a valid day : ";
+			cin >> stockInfo.dateOfPurchase.day;
+		}
+	} while (stockInfo.dateOfPurchase.day < 1 || stockInfo.dateOfPurchase.day>31);
 	cout << "month:";
 	cin >> stockInfo.dateOfPurchase.month;
 	cout << "year:";
