@@ -19,7 +19,7 @@ struct Date
 };
 struct Stock
 {
-	char name[30];
+	char name[100];
 	double price;
 	Date dateOfPurchase;
 };
@@ -27,9 +27,17 @@ int main()
 {
 	Stock stockInfo;
 	cout << "Enter the name of the stock:";
-	cin.getline(stockInfo.name, 30);
+	cin.getline(stockInfo.name, 100);
 	cout << "Enter the price of the stock:";
-	cin >> stockInfo.price;
+	do
+	{
+		cin >> stockInfo.price;
+		while (stockInfo.price <= 0.0)
+		{
+			cout << "Invalid price. Please enter a valid price";
+			cin >> stockInfo.price;
+		}
+	} while (stockInfo.price <= 0.0);
 	cin.ignore();
 	cout << "Enter the date of purchase" << endl;
 	cout << "day:";
