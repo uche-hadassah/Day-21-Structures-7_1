@@ -34,26 +34,43 @@ int main()
 		cin >> stockInfo.price;
 		while (stockInfo.price <= 0.0)
 		{
-			cout << "Invalid price. Please enter a valid price";
+			cout << "Invalid price. Please enter a valid price:";
 			cin >> stockInfo.price;
 		}
 	} while (stockInfo.price <= 0.0);
 	cin.ignore();
-	cout << "Enter the date of purchase" << endl;
-	cout << "day:";
+	cout << "Enter the date of purchase" << endl << "day:";
 	do
 	{
 		cin >> stockInfo.dateOfPurchase.day;
 		while (stockInfo.dateOfPurchase.day < 1 || stockInfo.dateOfPurchase.day>31)
 		{
-			cout <<"Invalid day. We can't have "<< stockInfo.dateOfPurchase.day <<" day(s) in a month."<<endl<< "Please enter a valid day : ";
+			cout <<"Invalid day. We can't have "<< stockInfo.dateOfPurchase.day <<" day(s) in a month."<<endl<< "Please enter a valid day: ";
 			cin >> stockInfo.dateOfPurchase.day;
 		}
 	} while (stockInfo.dateOfPurchase.day < 1 || stockInfo.dateOfPurchase.day>31);
+	cin.ignore();
 	cout << "month:";
-	cin >> stockInfo.dateOfPurchase.month;
+	do
+	{
+		cin >> stockInfo.dateOfPurchase.month;
+		while (stockInfo.dateOfPurchase.month < 1 || stockInfo.dateOfPurchase.month > 12)
+		{
+			cout << "Invalid day. We can't have " << stockInfo.dateOfPurchase.month << " months in a year." << endl << "Please enter a valid month: ";
+			cin >> stockInfo.dateOfPurchase.month;
+		}
+	} while (stockInfo.dateOfPurchase.month < 1 || stockInfo.dateOfPurchase.month > 12);
+	cin.ignore();
 	cout << "year:";
-	cin >> stockInfo.dateOfPurchase.year;
+	do
+	{
+		cin >> stockInfo.dateOfPurchase.year;
+		while (stockInfo.dateOfPurchase.year < 1 || stockInfo.dateOfPurchase.year>2023)
+		{
+			cout << "Invalid year! Please Enter a valid year:";
+			cin >> stockInfo.dateOfPurchase.year;
+		}
+	} while (stockInfo.dateOfPurchase.year < 1 || stockInfo.dateOfPurchase.year>2023);
 	cin.ignore();
 	cout << "STOCK INFO:";
 	cout << "\nName:" << stockInfo.name;
