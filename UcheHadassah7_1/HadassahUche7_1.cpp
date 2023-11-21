@@ -17,3 +17,8 @@ struct Stock
 	double price;
 	char dateOfPurchase[11];
 };
+int main()
+{
+	Stock stockInfo = { "IBM",1150.50,"12/07/1999" };
+
+}
