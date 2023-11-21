@@ -11,14 +11,36 @@ data from the user and display them.*/
 #include<iostream>
 #include<cstring>
 using namespace std;
+struct Date
+{
+	int day;
+	int month;
+	int year;
+};
 struct Stock
 {
 	char name[30];
 	double price;
-	char dateOfPurchase[11];
+	Date dateOfPurchase;
 };
 int main()
 {
-	Stock stockInfo = { "IBM",1150.50,"12/07/1999" };
-
+	Stock stockInfo;
+	cout << "Enter the name of the stock:";
+	cin.getline(stockInfo.name, 30);
+	cout << "Enter the price of the stock:";
+	cin >> stockInfo.price;
+	cin.ignore();
+	cout << "Enter the date of purchase" << endl;
+	cout << "day:";
+	cin >> stockInfo.dateOfPurchase.day;
+	cout << "month:";
+	cin >> stockInfo.dateOfPurchase.month;
+	cout << "year:";
+	cin >> stockInfo.dateOfPurchase.year;
+	cin.ignore();
+	cout << "STOCK INFO:";
+	cout << "\nName:" << stockInfo.name;
+	cout << "\nPrice:"<< stockInfo.price;
+	cout << "\nDate of purchase:" << stockInfo.dateOfPurchase.day << "/" << stockInfo.dateOfPurchase.month << "/" << stockInfo.dateOfPurchase.year;
 }
